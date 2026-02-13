@@ -2,6 +2,7 @@
 import { useState } from "react";
 import {Ambulance, Cat, ChessQueen, CloudDrizzle, Frown, Ghost, Heart, HeartCrack, Meh, Skull} from "lucide-react";
 import confetti from "canvas-confetti";
+import LyricsComponentGolden from "@/app/components/LyricsComponentGolden";
 
 export default function ValentinePage() {
   const [noCount, setNoCount] = useState(0);
@@ -15,7 +16,6 @@ export default function ValentinePage() {
 
     const end = Date.now() + (15 * 1000);
 
-// go Buckeyes!
     const colors = ['#000000', '#B695C0'];
 
     (function frame() {
@@ -80,7 +80,7 @@ export default function ValentinePage() {
   };
 
   return (
-      <div className="relative flex flex-col items-center justify-center h-screen bg-pink-100 p-4 text-center overflow-hidden">
+      <div className={`relative flex flex-col items-center ${yesPressed ? 'justify-start' : 'justify-center'} min-h-screen bg-pink-100 p-4 text-center overflow-y-auto`}>
         {yesPressed ? (
             <>
               <img
@@ -89,15 +89,16 @@ export default function ValentinePage() {
                   className="rounded-lg shadow-lg"
               />
               <h1 className="text-4xl font-bold text-pink-600 mt-4 animate-bounce">
-                ¡Sabía que dirías que sí! ❤️
+                ¡Sabía que dirías que sí :3
               </h1>
               <p className="text-lg text-pink-500 mt-2 font-semibold">Nos vemos el 14.</p>
               <div className="containerIframe">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.640721474512!2d-74.09612962418669!3d4.65799284202459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f85921810393d%3A0x1d953f644042b03b!2sParque%20Metropolitano%20Sim%C3%B3n%20Bol%C3%ADvar!5e0!3m2!1ses-419!2sco!4v1770953787738!5m2!1ses-419!2sco"
                     width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-              </div>
 
+              </div>
+              <LyricsComponentGolden/>
             </>
         ) : (
             <>
@@ -123,6 +124,7 @@ export default function ValentinePage() {
               </div>
             </>
         )}
+
       </div>
   );
 }
