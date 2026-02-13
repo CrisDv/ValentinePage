@@ -6,7 +6,7 @@ import confetti from "canvas-confetti";
 export default function ValentinePage() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
-  const [noButtonPos, setNoButtonPos] = useState({ top: String, left: null });
+  const [noButtonPos, setNoButtonPos] = useState({ top: null, left: null });
 
   const yesButtonSize = noCount * 20 + 16;
 
@@ -50,7 +50,7 @@ export default function ValentinePage() {
     setNoCount(noCount + 1);
     const randomTop = Math.random() * 80 + "%";
     const randomLeft = Math.random() * 80 + "%";
-    setNoButtonPos({ top: randomTop, left: randomLeft });
+    //setNoButtonPos({ top: randomTop, left: randomLeft });
   };
 
   const getNoButtonText = () => {
